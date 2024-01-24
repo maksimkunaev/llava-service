@@ -34,6 +34,9 @@ async function generate(prompt, imagePath = null) {
 
 const prompt = "USER:[img-1] What is it on the image?\nASSISTANT:\n";
 
-generate(prompt, "/path/to/your/image.png").then((response) => {
+generate(
+  prompt
+  // "/home/random/Documents/7.png"
+).then((response) => {
   console.log("Response:", response);
 });
