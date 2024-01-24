@@ -1,22 +1,15 @@
 import base64
 import os
-from dotenv import load_dotenv
 import requests
 import json
-load_dotenv()  # This method will load the environment variables from the .env file
 
 
 def encode_image(image_path):
     with open(image_path, "rb") as image_file:
         return base64.b64encode(image_file.read()).decode("utf-8")
 
-# Function to generate request with image data
-
 
 def generate(prompt, image_path=None):
-    # print('Prompt:')
-    # print(prompt)
-    # print('\n')
     url = "http://localhost:8080/completion"
     headers = {"Content-Type": "application/json"}
 
@@ -31,7 +24,8 @@ def generate(prompt, image_path=None):
         "stop": [
             "<|im_end|>",
             "[/INST]",
-            # "\n\n"
+            "USER:",
+            "ASSISTANT:"
         ]
     }
 
