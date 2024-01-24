@@ -1,6 +1,11 @@
-docker build -t llama-cpp-server .
 
-docker run --gpus all -v "/home/random/private/models/:/usr/src/app/models/" --network=host -p 8080:8080 llama-cpp-server
+
+```docker build -t llama-cpp-server .```
+
+```docker run -v "<unique-path-to-your-models>:/usr/src/app/models/" --network=host -p 8080:8080 llama-cpp-server```
+
+```docker run --gpus all -v "/home/random/models/:/usr/src/app/models/" --network=host -p 8080:8080 llama-cpp-server
+```
 
 To remove all Docker images and containers to free up storage, you can follow these steps:
 
