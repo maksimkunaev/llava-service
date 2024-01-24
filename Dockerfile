@@ -31,5 +31,9 @@ WORKDIR /usr/src/app/models
 RUN nvcc --version
 # RUN python3 --version
 
-# # Command to run the server
-CMD ["../llama.cpp/server", "-m", "llava-ggml-model-q4_k.gguf", "--mmproj", "mmproj-model-f16.gguf", "-ngl", "30", "-c", "2048"]
+# # # Command to run the server
+# CMD ["../llama.cpp/server", "-m", "llava-ggml-model-q4_k.gguf", "--mmproj", "mmproj-model-f16.gguf", "-ngl", "30", "-c", "2048"]
+
+# CMD ["./server", "-m", "/usr/src/app/models/llava-ggml-model-q4_k.gguf", "--mmproj", "/usr/src/app/models/mmproj-model-f16.gguf", "-ngl", "30", "-c", "2048"]
+
+CMD ["/usr/src/app/llama.cpp/server", "-m", "/usr/src/app/models/llava-ggml-model-q4_k.gguf", "--mmproj", "/usr/src/app/models/mmproj-model-f16.gguf", "-ngl", "30", "-c", "2048"]
